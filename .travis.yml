@@ -1,4 +1,5 @@
 language: swift
+xcode_workspace: Danger.xcworkspace
 xcode_scheme: Danger
 osx_image: xcode11.1
 
