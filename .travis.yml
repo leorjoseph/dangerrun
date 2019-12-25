@@ -9,8 +9,16 @@ before_install:
 
 script:
 - fastlane ci
-- bundle exec danger
 
 after_success:
   # generate docs
 - jazzy --xcodebuild-arguments -scheme,DangerTest --module DangerTest --source-directory DangerTest --readme README.md
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  local_dir: docs
+  on:
+    branch: master
